@@ -63,7 +63,7 @@ A aplicacao usa as seguintes configuracoes padrao:
 ```text
 SQLSERVER_URL=jdbc:sqlserver://localhost:1433;databaseName=todo_list;encrypt=true;trustServerCertificate=true
 SQLSERVER_USERNAME=sa
-SQLSERVER_PASSWORD=YourStrong!Passw0rd
+SQLSERVER_PASSWORD=123Mudar
 ```
 
 Esses valores ja estao compativeis com o `docker-compose.yml`.
@@ -191,4 +191,4 @@ O projeto possui uma esteira em GitHub Actions:
 .github/workflows/ci-cd.yml
 ```
 
-Ela executa build e testes, sobe um SQL Server no pipeline, cria o banco `todo_list`, empacota a aplicacao e publica o `.jar` como artefato.
+Ela executa build e testes, sobe um SQL Server no pipeline, cria o banco `db_todolist`, empacota a aplicacao e publica o `.jar` como artefato.
