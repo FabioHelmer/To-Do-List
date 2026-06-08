@@ -48,7 +48,7 @@ Esse comando sobe:
 
 - um container SQL Server em `localhost:1433`
 - um volume persistente para os dados do banco
-- um container de inicializacao que cria o banco `todo_list`
+- um container de inicializacao que cria o banco `db_todolist`
 
 Para verificar se os containers estao rodando:
 
@@ -61,7 +61,7 @@ docker compose ps
 A aplicacao usa as seguintes configuracoes padrao:
 
 ```text
-SQLSERVER_URL=jdbc:sqlserver://localhost:1433;databaseName=todo_list;encrypt=true;trustServerCertificate=true
+SQLSERVER_URL=jdbc:sqlserver://localhost:1433;databaseName=db_todolist;encrypt=true;trustServerCertificate=true
 SQLSERVER_USERNAME=sa
 SQLSERVER_PASSWORD=123Mudar
 ```
