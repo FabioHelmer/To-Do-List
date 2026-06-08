@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:8080:1433;databaseName=db_todolist;encrypt=true;trustServerCertificate=true
+    username: elsistemas
+    password: elerp
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    baseline-version: 0
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
