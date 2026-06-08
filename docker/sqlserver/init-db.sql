@@ -1,5 +1,5 @@
-IF DB_ID(N'todo_list') IS NULL
+IF DB_ID(N'db_todolist') IS NULL
 BEGIN
-    CREATE DATABASE todo_list;
+    CREATE DATABASE db_todolist;
 END;
 GO
