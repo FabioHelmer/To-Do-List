@@ -6,6 +6,9 @@ import java.util.UUID;
 
 public class Task {
 
+	public static final int MAX_TITLE_LENGTH = 150;
+	public static final int MAX_DESCRIPTION_LENGTH = 1000;
+
 	private final UUID id;
 	private String title;
 	private String description;
@@ -78,7 +81,12 @@ public class Task {
 			throw new IllegalArgumentException("title is required");
 		}
 
-		return title.trim();
+		String normalizedTitle = title.trim();
+		if (normalizedTitle.length() > MAX_TITLE_LENGTH) {
+			throw new IllegalArgumentException("title must have at most " + MAX_TITLE_LENGTH + " characters");
+		}
+
+		return normalizedTitle;
 	}
 
 	private static String normalizeDescription(String description) {
@@ -86,6 +94,12 @@ public class Task {
 			return "";
 		}
 
-		return description.trim();
+		String normalizedDescription = description.trim();
+		if (normalizedDescription.length() > MAX_DESCRIPTION_LENGTH) {
+			throw new IllegalArgumentException(
+					"description must have at most " + MAX_DESCRIPTION_LENGTH + " characters");
+		}
+
+		return normalizedDescription;
 	}
 }
