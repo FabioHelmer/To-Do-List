@@ -29,6 +29,13 @@ class TaskTest {
 	}
 
 	@Test
+	void shouldRejectTitleLongerThanColumnLimit() {
+		assertThatThrownBy(() -> Task.create("a".repeat(Task.MAX_TITLE_LENGTH + 1), "Any description"))
+				.isInstanceOf(IllegalArgumentException.class)
+				.hasMessage("title must have at most 150 characters");
+	}
+
+	@Test
 	void shouldCompleteAndReopenTask() {
 		Task task = Task.create("Pay invoice", null);
 
