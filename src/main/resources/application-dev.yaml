@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:8080:1433;databaseName=db_todolist;encrypt=true;trustServerCertificate=true
+    url: jdbc:sqlserver://localhost:1433;databaseName=db_todolist;encrypt=true;trustServerCertificate=true
     username: sa
     password: 123Mudar
   jpa:
