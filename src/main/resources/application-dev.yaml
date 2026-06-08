@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:sqlserver://localhost:8080:1433;databaseName=db_todolist;encrypt=true;trustServerCertificate=true
-    username: elsistemas
-    password: elerp
+    username: username
+    password: password
   jpa:
     hibernate:
       ddl-auto: validate
