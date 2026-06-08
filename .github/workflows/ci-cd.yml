@@ -53,6 +53,9 @@ jobs:
             -C \
             -Q "IF DB_ID('db_todolist') IS NULL CREATE DATABASE db_todolist"
 
+      - name: Dar permissão ao Maven Wrapper
+        run: chmod +x mvnw
+
       - name: Run tests
         run: ./mvnw test
 
