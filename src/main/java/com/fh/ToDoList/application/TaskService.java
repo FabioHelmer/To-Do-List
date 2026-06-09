@@ -4,16 +4,15 @@ import com.fh.ToDoList.domain.Task;
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
+
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class TaskService {
 
 	private final TaskRepository taskRepository;
-
-	public TaskService(TaskRepository taskRepository) {
-		this.taskRepository = taskRepository;
-	}
 
 	public Task create(String title, String description) {
 		return taskRepository.save(Task.create(title, description));
