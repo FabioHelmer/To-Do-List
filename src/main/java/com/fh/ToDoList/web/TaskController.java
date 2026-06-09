@@ -8,6 +8,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import java.net.URI;
 import java.util.List;
 import java.util.UUID;
+
+import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,13 +24,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/tasks")
 @Tag(name = "Tasks", description = "Operacoes para gerenciamento de tarefas.")
+@AllArgsConstructor
 public class TaskController {
 
 	private final TaskService taskService;
-
-	public TaskController(TaskService taskService) {
-		this.taskService = taskService;
-	}
 
 	@PostMapping
 	@Operation(summary = "Cria uma tarefa", responses = {

@@ -5,16 +5,15 @@ import com.fh.ToDoList.domain.Task;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@AllArgsConstructor
 public class SqlServerTaskRepository implements TaskRepository {
 
 	private final JpaTaskRepository jpaTaskRepository;
-
-	public SqlServerTaskRepository(JpaTaskRepository jpaTaskRepository) {
-		this.jpaTaskRepository = jpaTaskRepository;
-	}
 
 	@Override
 	public Task save(Task task) {
